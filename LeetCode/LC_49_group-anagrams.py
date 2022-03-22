@@ -1,11 +1,13 @@
-str_dict = {}
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        str_dict = {}
 
-for word in strs:
-    ordered_str = "".join(sorted(word))
-    if ordered_str in str_dict.keys():
-        str_dict[ordered_str].append(word)
-    else:
-        str_dict[ordered_str] = [word]
+        for word in strs:
+            ordered_str = "".join(sorted(word))
+            if ordered_str in str_dict.keys():
+                str_dict[ordered_str].append(word)
+            else:
+                str_dict[ordered_str] = [word]
 
-anagrams = list(str_dict.values())
-return anagrams
+        anagrams = list(str_dict.values())
+        return anagrams
