@@ -16,9 +16,3 @@ class Solution:
         for i in range(len(s) - 1):
             result = max(result, expand(i, i + 1), expand(i, i + 2), key=len)
         return result
-
-
-if __name__ == "__main__":
-    solution = Solution()
-    input_var = "babad"
-    print(solution.longestPalindrome(input_var))
